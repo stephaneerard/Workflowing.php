@@ -1,0 +1,23 @@
+{
+    "name": "workflowing",
+    "version": "1.0.0",
+    "repositories":{
+      "se/promise.php":{
+          "vcs":{
+              "url": "git://github.com/stephaneerard/Promise.php.git"
+          }
+      }  
+    },
+    "require":{
+        "php": ">=5.3",
+        "symfony/event-dispatcher": ">=2.0",
+        "symfony/class-loader": ">=2.0",
+        "se/promise.php": ">0.0.0"
+    },
+    "autoload": {
+        "psr-0":{
+            "se\\Workflowing": "src/"
+        }
+    },
+    "vendor-dir": "vendor"
+}
