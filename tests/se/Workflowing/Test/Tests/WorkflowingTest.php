@@ -2,31 +2,21 @@
 
 namespace se\Workflowing\Test\Tests;
 
-use se\Workflowing\Workflow;
+use se\Workflowing\Workflow\Workflow;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use se\Promise\Promise;
 
 class WorkflowingTestCase extends \PHPUnit_Framework_TestCase
 {
-	public function testNew()
+	public function testNewEventDispatcher()
 	{
-		$new = $this->getNewWorkflow();
-		$this->assertInstanceOf('se\Workflowing\Workflow\Workflow', $new);
+		$dispatcher = new EventDispatcher();
+		$this->assertInstanceOf('Symfony\Component\EventDispatcher\EventDispatcher', $dispatcher);
 	}
-
 	
-
-	/**********************
-	 *
-	* 			HELPERS
-	*
-	*********************/
-
-	/**
-	 * @param string $class
-	 * @return Workflow
-	 */
-	public function getNewWorkflow($class = null)
+	public function testNewPromise()
 	{
-		$class = $class ?: 'se\Workflowing\Workflow\Workflow';
-		return new $class();
+		$promise = new Promise(function(){});
+		$this->assertInstanceOf('se\Promise\Promise', $promise);
 	}
 }
